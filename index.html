@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div>
+        <input class="js-input-a" type="number" />
+        <input class="js-input-b" type="number" />
+        <select class="js-select">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+            <option value="**">**</option>
+            <option value="√">√</option>
+        </select>
+        <button class="js-btn">Result</button>
+    </div>
+    <div>
+        <p class="js-output"></p>
+    </div>
+    <script>
+        const inputA = document.querySelector(".js-input-a");
+        const inputB = document.querySelector(".js-input-b");
+        const btnResult = document.querySelector(".js-btn");
+        const output = document.querySelector(".js-output");
+        const jsSelect = document.querySelector(".js-select");
+
+        btnResult.addEventListener("click", function () {
+            const a = Number(inputA.value);
+            const b = Number(inputB.value);
+
+            const operation = jsSelect.value;
+            const result = calc({ a, b, operation });
+            console.log(result);
+            output.innerHTML = result;
+        });
+        function sum(a, b) {
+            return a + b;
+        }
+        function substract(a, b) {
+            return a - b;
+        }
+        function multiply(a, b) {
+            return a * b;
+        }
+        function divide(a, b) {
+            return a / b;
+        }
+        function pow(a, b) {
+            return a ** b;
+        }
+        function sqrt(a) {
+            return Math.sqrt(a);
+        }
+
+        const OPERATIONS = {
+            sum: "+",
+            substract: "-",
+            multiply: "*",
+            divide: "/",
+            pow: "**",
+        };
+
+        function calc({ a, b, operation }) {
+            let result = null;
+
+            if (operation == "+") {
+                result = sum(a, b);
+            } else if (operation == "-") {
+                result = substract(a, b);
+            } else if (operation == "*") {
+                result = multiply(a, b);
+            } else if (operation == "/") {
+                result = divide(a, b);
+            } else if (operation == "**") {
+                result = pow(a, b);
+            } else if (operation == "√") {
+                result = sqrt(a);
+            }
+            return result;
+        }
+    </script>
+</body>
+
+</html>
