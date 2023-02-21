@@ -1,17 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ua">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Calculator</title>
+    <title>Калькулятор</title>
     <link rel="stylesheet" href="style.css" />
   </head>
 
   <body>
     <div>
+      <p>Введіть перше число</p>
       <input class="js-input-a" type="number" />
+      <p>Введіть друге число</p>
       <input class="js-input-b" type="number" />
+      <p>Виберіть дію</p>
       <select class="js-select">
         <option value="+">+</option>
         <option value="-">-</option>
@@ -20,7 +23,8 @@
         <option value="**">**</option>
         <option value="√">√</option>
       </select>
-      <button class="js-btn">Result</button>
+      <p>Нажміть кнопку для отримання результату</p>
+      <button class="js-btn">Результат</button>
     </div>
     <div>
       <p class="js-output"></p>
