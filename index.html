@@ -10,11 +10,13 @@
 
   <body>
     <div>
+      <!-- робимо 2 інпути для вводу данних -->
       <p>Введіть перше число</p>
       <input class="js-input-a" type="number" />
       <p>Введіть друге число</p>
       <input class="js-input-b" type="number" />
       <p>Виберіть дію</p>
+      <!-- робимо вибір функції -->
       <select class="js-select">
         <option value="+">+</option>
         <option value="-">-</option>
@@ -30,12 +32,13 @@
       <p class="js-output"></p>
     </div>
     <script>
+      // визначаємо змінні для інпутів кнопки аутпуту 
       const inputA = document.querySelector(".js-input-a");
       const inputB = document.querySelector(".js-input-b");
       const btnResult = document.querySelector(".js-btn");
       const output = document.querySelector(".js-output");
       const jsSelect = document.querySelector(".js-select");
-
+// створюємо обробник події
       btnResult.addEventListener("click", function () {
         const a = Number(inputA.value);
         const b = Number(inputB.value);
@@ -45,6 +48,7 @@
         console.log(result);
         output.innerHTML = result;
       });
+      // задаємо функції для кожного селекту 
       function sum(a, b) {
         return a + b;
       }
@@ -63,15 +67,16 @@
       function sqrt(a) {
         return Math.sqrt(a);
       }
-
+// визначаємо оператори 
       const OPERATIONS = {
         sum: "+",
         substract: "-",
         multiply: "*",
         divide: "/",
         pow: "**",
+        sqrt: "√",
       };
-
+// визначаємо головну функцію яка приймає визначені вище функції в залежності від оператора і повертаємо результат який ми виводили вище через іннер
       function calc({ a, b, operation }) {
         let result = null;
 
